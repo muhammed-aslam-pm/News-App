@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class NewsCard extends StatelessWidget {
   const NewsCard(
@@ -10,7 +11,7 @@ class NewsCard extends StatelessWidget {
 
   final String title;
   final String description;
-  final DateTime date;
+  final DateTime? date;
   final String imageUrl;
 
   @override
@@ -50,7 +51,9 @@ class NewsCard extends StatelessWidget {
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [Text(date.toString())],
+            children: [
+              Text(DateFormat('dd/MM/yyyy').format(date!).toString() ?? "")
+            ],
           )
         ],
       ),
