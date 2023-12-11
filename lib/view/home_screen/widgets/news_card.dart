@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:news_app_with_api/view/home_screen/widgets/news_view_screen.dart';
 
 class NewsCard extends StatelessWidget {
   const NewsCard(
@@ -7,12 +8,16 @@ class NewsCard extends StatelessWidget {
       required this.title,
       required this.description,
       required this.date,
-      required this.imageUrl});
+      required this.imageUrl,
+      required this.contant,
+      required this.sourceName});
 
   final String title;
   final String description;
   final DateTime? date;
   final String imageUrl;
+  final String contant;
+  final String sourceName;
 
   @override
   Widget build(BuildContext context) {
@@ -38,23 +43,40 @@ class NewsCard extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(
-            title,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NewsViewScreen(
+                      title: title,
+                      description: description,
+                      imageUrl: imageUrl,
+                      date: date,
+                      contant: contant,
+                      sourceName: sourceName,
+                    ),
+                  ));
+              print(contant);
+            },
+            child: Column(
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(sourceName),
+                    Text(
+                        DateFormat('dd/MM/yyyy').format(date!).toString() ?? "")
+                  ],
+                )
+              ],
+            ),
           ),
-          SizedBox(height: 10),
-          Text(
-            description,
-            overflow: TextOverflow.ellipsis,
-            maxLines: 3,
-          ),
-          SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(DateFormat('dd/MM/yyyy').format(date!).toString() ?? "")
-            ],
-          )
         ],
       ),
     );

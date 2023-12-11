@@ -37,12 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.all(20),
         child: ListView.separated(
             itemBuilder: (context, index) => NewsCard(
-                title: newsModel.articles?[index].title.toString() ?? "",
-                description:
-                    newsModel.articles?[index].description.toString() ?? "",
-                date: newsModel.articles?[index].publishedAt,
-                imageUrl:
-                    newsModel.articles?[index].urlToImage.toString() ?? ""),
+                  title: newsModel.articles?[index].title.toString() ?? "",
+                  description:
+                      newsModel.articles?[index].description.toString() ?? "",
+                  date: newsModel.articles?[index].publishedAt,
+                  imageUrl:
+                      newsModel.articles?[index].urlToImage.toString() ?? "",
+                  contant: newsModel.articles?[index].content.toString() ?? "",
+                  sourceName:
+                      newsModel.articles?[index].source?.name.toString() ?? "",
+                ),
             separatorBuilder: (context, index) => Divider(
                   height: 20,
                 ),
