@@ -29,7 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text("News Today 📰"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: ListView.separated(
