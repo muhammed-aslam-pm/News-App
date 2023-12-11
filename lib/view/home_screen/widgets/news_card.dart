@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:news_app_with_api/controller/home-screen_controller.dart';
 import 'package:news_app_with_api/view/home_screen/widgets/news_view_screen.dart';
 
 class NewsCard extends StatelessWidget {
@@ -10,7 +11,8 @@ class NewsCard extends StatelessWidget {
       required this.date,
       required this.imageUrl,
       required this.contant,
-      required this.sourceName});
+      required this.sourceName,
+      required this.url});
 
   final String title;
   final String description;
@@ -18,6 +20,7 @@ class NewsCard extends StatelessWidget {
   final String imageUrl;
   final String contant;
   final String sourceName;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +58,7 @@ class NewsCard extends StatelessWidget {
                       date: date,
                       contant: contant,
                       sourceName: sourceName,
+                      url: url,
                     ),
                   ));
               print(contant);
@@ -65,13 +69,19 @@ class NewsCard extends StatelessWidget {
                   title,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
-                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(sourceName),
                     Text(
-                        DateFormat('dd/MM/yyyy').format(date!).toString() ?? "")
+                        "$sourceName | ${DateFormat('dd/MM/yyyy').format(date!).toString() ?? ""}"),
+                    IconButton(
+                        onPressed: () {
+                          String newsToShare =
+                              """$title \n \n $description \n \n $url""";
+                          HomeScreenController()
+                              .shareText(textToShare: newsToShare);
+                        },
+                        icon: Icon(Icons.share))
                   ],
                 )
               ],

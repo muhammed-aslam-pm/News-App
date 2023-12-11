@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:news_app_with_api/controller/home-screen_controller.dart';
 
 class NewsViewScreen extends StatelessWidget {
   const NewsViewScreen(
@@ -11,13 +12,15 @@ class NewsViewScreen extends StatelessWidget {
       this.date,
       required this.imageUrl,
       required this.contant,
-      required this.sourceName});
+      required this.sourceName,
+      required this.url});
   final String title;
   final String description;
   final DateTime? date;
   final String imageUrl;
   final String contant;
   final String sourceName;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +67,21 @@ class NewsViewScreen extends StatelessWidget {
               Text(
                 """ $description $contant""",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              InkWell(
+                onTap: () {
+                  HomeScreenController().launchURL(url);
+                },
+                child: Text(
+                  "Click heare to Read more",
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.blue),
+                ),
               ),
             ],
           ),

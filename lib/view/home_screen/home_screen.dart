@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("News Today 📰"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         child: ListView.separated(
             itemBuilder: (context, index) => NewsCard(
                   title: newsModel.articles?[index].title.toString() ?? "",
@@ -46,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   contant: newsModel.articles?[index].content.toString() ?? "",
                   sourceName:
                       newsModel.articles?[index].source?.name.toString() ?? "",
+                  url: newsModel.articles?[index].url.toString() ?? "",
                 ),
             separatorBuilder: (context, index) => Divider(
                   height: 20,
