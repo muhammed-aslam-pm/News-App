@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app_with_api/controller/home-screen_controller.dart';
+import 'package:provider/provider.dart';
 
 class NewsViewScreen extends StatelessWidget {
   const NewsViewScreen(
@@ -73,7 +74,8 @@ class NewsViewScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  HomeScreenController().launchURL(url);
+                  Provider.of<HomeScreenController>(context, listen: false)
+                      .launchURL(url);
                 },
                 child: Text(
                   "Click heare to Read more",

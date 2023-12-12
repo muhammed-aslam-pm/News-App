@@ -1,12 +1,16 @@
 import 'dart:convert';
-
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_app_with_api/model/news_model.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeScreenController {
-  Future<NewsModel> fetchData() async {
+class HomeScreenController with ChangeNotifier {
+  late NewsModel newsModel;
+  bool isLoading = false;
+  fetchData() async {
+    isLoading = true;
+    notifyListeners();
     final url = Uri.parse(
         "https://newsapi.org/v2/everything?q=apple&from=2023-12-10&to=2023-12-10&sortBy=popularity&apiKey=8fa00ba1169d491bb7a76a8a2e9c7cfe");
     final response = await http.get(url);
@@ -18,7 +22,9 @@ class HomeScreenController {
     } else {
       print("Api failed");
     }
-    return NewsModel.fromJson(decodedData);
+    newsModel = NewsModel.fromJson(decodedData);
+    isLoading = false;
+    notifyListeners();
   }
 
   // Function to launch a URL
@@ -32,6 +38,7 @@ class HomeScreenController {
     } catch (e) {
       print('Error launching URL: $e');
     }
+    notifyListeners();
   }
 
   void shareText({String textToShare = ""}) {
@@ -40,5 +47,6 @@ class HomeScreenController {
     } catch (e) {
       print('Error sharing: $e');
     }
+    notifyListeners();
   }
 }
