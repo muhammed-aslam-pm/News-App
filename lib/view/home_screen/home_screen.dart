@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_with_api/controller/home-screen_controller.dart';
-import 'package:news_app_with_api/model/news_model.dart';
+import 'package:lottie/lottie.dart';
 import 'package:news_app_with_api/view/home_screen/widgets/news_card.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  var provider;
   @override
   void initState() {
     super.initState();
@@ -24,67 +25,50 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    HomeScreenController provider = Provider.of<HomeScreenController>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text("News Today 📰"),
       ),
       body: Provider.of<HomeScreenController>(context).isLoading == true
-          ? Center(child: CircularProgressIndicator())
+          ? Center(
+              child: LottieBuilder.asset(
+              "assets/animations/Animation - 1702395258490.json",
+              fit: BoxFit.cover,
+              height: 150,
+              width: 150,
+            ))
           : Padding(
               padding: const EdgeInsets.all(10),
               child: ListView.separated(
                   itemBuilder: (context, index) => NewsCard(
-                        title: Provider.of<HomeScreenController>(context)
-                                .newsModel
-                                .articles?[index]
-                                .title
+                        title: provider.newsModel.articles?[index].title
                                 .toString() ??
                             "",
-                        description: Provider.of<HomeScreenController>(context)
-                                .newsModel
-                                .articles?[index]
-                                .description
+                        description: provider
+                                .newsModel.articles?[index].description
                                 .toString() ??
                             "",
-                        date: Provider.of<HomeScreenController>(context)
-                            .newsModel
-                            .articles?[index]
-                            .publishedAt,
-                        imageUrl: Provider.of<HomeScreenController>(context)
-                                .newsModel
-                                .articles?[index]
-                                .urlToImage
+                        date: provider.newsModel.articles?[index].publishedAt,
+                        imageUrl: provider.newsModel.articles?[index].urlToImage
                                 .toString() ??
                             "",
-                        contant: Provider.of<HomeScreenController>(context)
-                                .newsModel
-                                .articles?[index]
-                                .content
+                        contant: provider.newsModel.articles?[index].content
                                 .toString() ??
                             "",
-                        sourceName: Provider.of<HomeScreenController>(context)
-                                .newsModel
-                                .articles?[index]
-                                .source
-                                ?.name
+                        sourceName: provider
+                                .newsModel.articles?[index].source?.name
                                 .toString() ??
                             "",
-                        url: Provider.of<HomeScreenController>(context)
-                                .newsModel
-                                .articles?[index]
-                                .url
+                        url: provider.newsModel.articles?[index].url
                                 .toString() ??
                             "",
                       ),
                   separatorBuilder: (context, index) => Divider(
                         height: 20,
                       ),
-                  itemCount: Provider.of<HomeScreenController>(context)
-                          .newsModel
-                          .articles
-                          ?.length ??
-                      0),
+                  itemCount: provider.newsModel.articles?.length ?? 0),
             ),
     );
   }
