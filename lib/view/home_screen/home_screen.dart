@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app_with_api/controller/home-screen_controller.dart';
 import 'package:lottie/lottie.dart';
 import 'package:news_app_with_api/view/home_screen/widgets/news_card.dart';
+import 'package:news_app_with_api/view/search_screen/search_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var provider;
   @override
   void initState() {
     super.initState();
@@ -30,6 +30,19 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text("News Today 📰"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SearchScreen(),
+                ),
+              );
+            },
+            icon: Icon(Icons.search),
+          )
+        ],
       ),
       body: Provider.of<HomeScreenController>(context).isLoading == true
           ? Center(
