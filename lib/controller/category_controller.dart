@@ -5,19 +5,19 @@ import 'package:news_app_with_api/model/news_model.dart';
 
 class CategoryController with ChangeNotifier {
   List<String> categoryList = [
-    "business",
-    "entertainment",
-    "general",
-    "health",
-    "science",
-    "sports",
-    "technology"
+    "Business",
+    "Entertainment",
+    "General",
+    "Health",
+    "Science",
+    "Sports",
+    "Technology"
   ];
 
   String category = "business";
 
   onTap({required int index}) {
-    category = categoryList[index];
+    category = categoryList[index].toLowerCase();
     fetchData();
     print(category);
     notifyListeners();

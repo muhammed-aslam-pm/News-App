@@ -31,6 +31,7 @@ class _CAtegoryScreenState extends State<CAtegoryScreen> {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: Text("Categories"),
           bottom: TabBar(
             isScrollable: true,

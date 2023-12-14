@@ -14,6 +14,9 @@ class MainPage extends StatelessWidget {
           currentIndex: Provider.of<BottomNavController>(context).selectedIndex,
           onTap: Provider.of<BottomNavController>(context, listen: false)
               .onItemTap,
+          selectedIconTheme: IconThemeData(color: Colors.black),
+          selectedLabelStyle: TextStyle(color: Colors.black),
+          selectedItemColor: Colors.black,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
