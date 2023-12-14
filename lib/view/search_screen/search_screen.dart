@@ -51,6 +51,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     onPressed: () {
                       provider.searchData(
                           searchText: textController.text.toLowerCase());
+                      FocusManager.instance.primaryFocus?.unfocus();
                     },
                     child: Text("Search"),
                     style: ButtonStyle(

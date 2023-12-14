@@ -78,7 +78,7 @@ class NewsCard extends StatelessWidget {
                     IconButton(
                         onPressed: () {
                           String newsToShare =
-                              """$title \n \n $description \n \n $url""";
+                              "$title \n \n $description \n \n $url";
                           Provider.of<HomeScreenController>(context,
                                   listen: false)
                               .shareText(textToShare: newsToShare);

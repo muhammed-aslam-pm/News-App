@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:news_app_with_api/controller/bottom_nav_controller.dart';
 import 'package:news_app_with_api/controller/home-screen_controller.dart';
 import 'package:news_app_with_api/controller/search_screen_controller.dart';
+import 'package:news_app_with_api/view/bottom_nav_bar/Main_page.dart';
 import 'package:news_app_with_api/view/home_screen/home_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -20,11 +22,14 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => SearchScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => BottomNavController(),
         )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: MainPage(),
       ),
     );
   }
