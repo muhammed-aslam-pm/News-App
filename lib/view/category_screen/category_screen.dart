@@ -68,7 +68,7 @@ class _CAtegoryScreenState extends State<CAtegoryScreen> {
         body: provider.isLoading == true
             ? Center(
                 child: LottieBuilder.asset(
-                "assets/animations/Animation - 1702395258490.json",
+                "assets/animations/Animation - 1702395258490 (1).json",
                 fit: BoxFit.cover,
                 height: 150,
                 width: 150,

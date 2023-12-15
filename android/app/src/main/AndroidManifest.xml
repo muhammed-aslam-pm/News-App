@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="news_app_with_api"
+        android:label="News Today"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
