@@ -4,11 +4,10 @@ import 'package:news_app_with_api/controller/category_controller.dart';
 import 'package:news_app_with_api/controller/home-screen_controller.dart';
 import 'package:news_app_with_api/controller/search_screen_controller.dart';
 import 'package:news_app_with_api/view/bottom_nav_bar/Main_page.dart';
-import 'package:news_app_with_api/view/home_screen/home_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
           create: (context) => CategoryController(),
         )
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: MainPage(),
       ),

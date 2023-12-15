@@ -33,18 +33,18 @@ class _CAtegoryScreenState extends State<CAtegoryScreen> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          titleTextStyle: TextStyle(
+          titleTextStyle: const TextStyle(
               color: Color(0xff6A3DE8),
               fontSize: 20,
               fontWeight: FontWeight.w600),
-          title: Text("Categories"),
+          title: const Text("Categories"),
           bottom: TabBar(
-            labelStyle: TextStyle(
+            labelStyle: const TextStyle(
                 color: Color(0xff6A3DE8), fontWeight: FontWeight.w600),
             labelColor: Colors.white,
             unselectedLabelColor: Color(0xff6A3DE8),
             indicatorPadding: EdgeInsets.symmetric(horizontal: 5),
-            unselectedLabelStyle: TextStyle(
+            unselectedLabelStyle: const TextStyle(
                 color: Color(0xff6A3DE8),
                 fontSize: 15,
                 fontWeight: FontWeight.w500),
@@ -100,7 +100,7 @@ class _CAtegoryScreenState extends State<CAtegoryScreen> {
                                   .toString() ??
                               "",
                         ),
-                    separatorBuilder: (context, index) => Divider(
+                    separatorBuilder: (context, index) => const Divider(
                           height: 20,
                         ),
                     itemCount: provider.newsModel.articles?.length ?? 0),

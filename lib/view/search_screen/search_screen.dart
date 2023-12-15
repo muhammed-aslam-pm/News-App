@@ -42,12 +42,12 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide:
-                              BorderSide(color: Color(0xff6A3DE8), width: 3)),
+                          borderSide: const BorderSide(
+                              color: Color(0xff6A3DE8), width: 3)),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ElevatedButton(
@@ -91,7 +91,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               provider.newsModel?.articles?[index].source?.name ??
                                   "",
                           url: provider.newsModel?.articles?[index].url ?? ""),
-                      separatorBuilder: (context, index) => Divider(height: 20),
+                      separatorBuilder: (context, index) => const Divider(height: 20),
                       itemCount: provider.newsModel?.articles?.length ?? 0),
             )
           ],

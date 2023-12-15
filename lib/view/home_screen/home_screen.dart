@@ -30,10 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xff6A3DE8),
         elevation: 0,
-        title: Text(
+        title: const Text(
           "News Today 📰",
         ),
-        titleTextStyle: TextStyle(
+        titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
         actions: [
           IconButton(
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 .toString() ??
                             "",
                       ),
-                  separatorBuilder: (context, index) => Divider(
+                  separatorBuilder: (context, index) => const Divider(
                         height: 20,
                       ),
                   itemCount: provider.newsModel.articles?.length ?? 0),

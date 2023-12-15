@@ -26,7 +26,7 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -44,7 +44,7 @@ class NewsCard extends StatelessWidget {
                   fit: BoxFit.cover),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           InkWell(
@@ -62,13 +62,13 @@ class NewsCard extends StatelessWidget {
                       url: url,
                     ),
                   ));
-              print(contant);
             },
             child: Column(
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.w600),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,7 +83,7 @@ class NewsCard extends StatelessWidget {
                                   listen: false)
                               .shareText(textToShare: newsToShare);
                         },
-                        icon: Icon(Icons.share))
+                        icon: const Icon(Icons.share))
                   ],
                 )
               ],

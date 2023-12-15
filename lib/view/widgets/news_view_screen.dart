@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app_with_api/controller/home-screen_controller.dart';
@@ -29,7 +27,7 @@ class NewsViewScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Color(0xff6A3DE8), size: 30),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -39,9 +37,10 @@ class NewsViewScreen extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                style:
+                    const TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -51,7 +50,7 @@ class NewsViewScreen extends StatelessWidget {
                       "$sourceName | ${DateFormat('dd/MM/yyyy').format(date!).toString()}")
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -61,14 +60,15 @@ class NewsViewScreen extends StatelessWidget {
                     image: DecorationImage(
                         image: NetworkImage(imageUrl), fit: BoxFit.cover)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 """ $description $contant""",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               InkWell(
@@ -76,7 +76,7 @@ class NewsViewScreen extends StatelessWidget {
                   Provider.of<HomeScreenController>(context, listen: false)
                       .launchURL(url);
                 },
-                child: Text(
+                child: const Text(
                   "Click heare to Read more",
                   style: TextStyle(
                       fontSize: 15,
