@@ -31,9 +31,23 @@ class _CAtegoryScreenState extends State<CAtegoryScreen> {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          elevation: 0,
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(
+              color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
           title: Text("Categories"),
           bottom: TabBar(
+            labelStyle:
+                TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.black,
+            indicatorPadding: EdgeInsets.symmetric(horizontal: 5),
+            unselectedLabelStyle: TextStyle(
+                color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
+            overlayColor: MaterialStatePropertyAll(Colors.grey),
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicator: BoxDecoration(
+                color: Colors.black, borderRadius: BorderRadius.circular(10)),
             isScrollable: true,
             tabs: List.generate(
               provider.categoryList.length,

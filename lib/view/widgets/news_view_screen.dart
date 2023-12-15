@@ -27,7 +27,9 @@ class NewsViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -35,9 +37,6 @@ class NewsViewScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 20,
-              ),
               Text(
                 title,
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
@@ -56,7 +55,7 @@ class NewsViewScreen extends StatelessWidget {
                 height: 20,
               ),
               Container(
-                height: MediaQuery.sizeOf(context).height * 25 / 100,
+                height: MediaQuery.sizeOf(context).height * 30 / 100,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.circular(10),
                     image: DecorationImage(

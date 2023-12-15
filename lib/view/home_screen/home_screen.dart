@@ -28,8 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeScreenController provider = Provider.of<HomeScreenController>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text("News Today 📰"),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          "News Today 📰",
+        ),
+        titleTextStyle: TextStyle(
+            color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
         actions: [
           IconButton(
             onPressed: () {

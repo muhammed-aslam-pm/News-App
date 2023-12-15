@@ -12,7 +12,7 @@ class HomeScreenController with ChangeNotifier {
     isLoading = true;
     notifyListeners();
     final url = Uri.parse(
-        "https://newsapi.org/v2/everything?q=apple&from=2023-12-10&to=2023-12-10&sortBy=popularity&apiKey=8fa00ba1169d491bb7a76a8a2e9c7cfe");
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=8fa00ba1169d491bb7a76a8a2e9c7cfe");
     final response = await http.get(url);
     print(response.statusCode);
     Map<String, dynamic> decodedData = {};
