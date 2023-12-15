@@ -34,20 +34,25 @@ class _CAtegoryScreenState extends State<CAtegoryScreen> {
           elevation: 0,
           backgroundColor: Colors.white,
           titleTextStyle: TextStyle(
-              color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
+              color: Color(0xff6A3DE8),
+              fontSize: 20,
+              fontWeight: FontWeight.w600),
           title: Text("Categories"),
           bottom: TabBar(
-            labelStyle:
-                TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+            labelStyle: TextStyle(
+                color: Color(0xff6A3DE8), fontWeight: FontWeight.w600),
             labelColor: Colors.white,
-            unselectedLabelColor: Colors.black,
+            unselectedLabelColor: Color(0xff6A3DE8),
             indicatorPadding: EdgeInsets.symmetric(horizontal: 5),
             unselectedLabelStyle: TextStyle(
-                color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
+                color: Color(0xff6A3DE8),
+                fontSize: 15,
+                fontWeight: FontWeight.w500),
             overlayColor: MaterialStatePropertyAll(Colors.grey),
             indicatorSize: TabBarIndicatorSize.tab,
             indicator: BoxDecoration(
-                color: Colors.black, borderRadius: BorderRadius.circular(10)),
+                color: Color(0xff6A3DE8),
+                borderRadius: BorderRadius.circular(10)),
             isScrollable: true,
             tabs: List.generate(
               provider.categoryList.length,

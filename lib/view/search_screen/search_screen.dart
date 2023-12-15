@@ -43,7 +43,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide:
-                                BorderSide(color: Colors.black, width: 3)),
+                                BorderSide(color: Color(0xff6A3DE8), width: 3)),
                       ),
                     ),
                   ),
@@ -56,7 +56,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: Text("Search"),
                     style: ButtonStyle(
                         backgroundColor:
-                            MaterialStatePropertyAll(Colors.black)),
+                            MaterialStatePropertyAll(Color(0xff6A3DE8))),
                   )
                 ],
               ),
