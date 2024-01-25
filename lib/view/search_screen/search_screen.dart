@@ -33,7 +33,7 @@ class _SearchScreenState extends State<SearchScreen> {
               children: [
                 SizedBox(
                   height: 45,
-                  width: MediaQuery.sizeOf(context).width * 2 / 3,
+                  width: MediaQuery.sizeOf(context).width * 1.8 / 3,
                   child: TextField(
                     controller: textController,
                     decoration: InputDecoration(
@@ -59,7 +59,8 @@ class _SearchScreenState extends State<SearchScreen> {
                   child: Text("Search"),
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll(Color(0xff6A3DE8))),
+                          MaterialStatePropertyAll(Color(0xff6A3DE8)),
+                      foregroundColor: MaterialStatePropertyAll(Colors.white)),
                 )
               ],
             ),
