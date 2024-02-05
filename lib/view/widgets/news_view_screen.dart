@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:news_app_with_api/controller/home-screen_controller.dart';
+import 'package:news_app_with_api/controller/home_screen_controller.dart';
 import 'package:provider/provider.dart';
 
 class NewsViewScreen extends StatelessWidget {

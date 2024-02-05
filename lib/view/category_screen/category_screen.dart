@@ -19,7 +19,6 @@ class _CAtegoryScreenState extends State<CAtegoryScreen> {
   @override
   void initState() {
     fetchData();
-    // TODO: implement initState
     super.initState();
   }
 
@@ -42,16 +41,16 @@ class _CAtegoryScreenState extends State<CAtegoryScreen> {
             labelStyle: const TextStyle(
                 color: Color(0xff6A3DE8), fontWeight: FontWeight.w600),
             labelColor: Colors.white,
-            unselectedLabelColor: Color(0xff6A3DE8),
-            indicatorPadding: EdgeInsets.symmetric(horizontal: 5),
+            unselectedLabelColor: const Color(0xff6A3DE8),
+            indicatorPadding: const EdgeInsets.symmetric(horizontal: 5),
             unselectedLabelStyle: const TextStyle(
                 color: Color(0xff6A3DE8),
                 fontSize: 15,
                 fontWeight: FontWeight.w500),
-            overlayColor: MaterialStatePropertyAll(Colors.grey),
+            overlayColor: const MaterialStatePropertyAll(Colors.grey),
             indicatorSize: TabBarIndicatorSize.tab,
             indicator: BoxDecoration(
-                color: Color(0xff6A3DE8),
+                color: const Color(0xff6A3DE8),
                 borderRadius: BorderRadius.circular(10)),
             isScrollable: true,
             tabs: List.generate(

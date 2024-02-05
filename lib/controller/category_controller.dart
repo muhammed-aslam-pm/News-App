@@ -19,7 +19,7 @@ class CategoryController with ChangeNotifier {
   onTap({required int index}) {
     category = categoryList[index].toLowerCase();
     fetchData();
-    print(category);
+
     notifyListeners();
   }
 
@@ -30,16 +30,14 @@ class CategoryController with ChangeNotifier {
     notifyListeners();
     final url = Uri.parse(
         "https://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey=8fa00ba1169d491bb7a76a8a2e9c7cfe");
-    print(category);
+
     final response = await http.get(url);
-    print(response.statusCode);
+
     Map<String, dynamic> decodedData = {};
 
     if (response.statusCode == 200) {
       decodedData = jsonDecode(response.body);
-    } else {
-      print("Api failed");
-    }
+    } else {}
     newsModel = NewsModel.fromJson(decodedData);
     isLoading = false;
     notifyListeners();

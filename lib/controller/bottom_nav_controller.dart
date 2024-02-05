@@ -11,10 +11,13 @@ class BottomNavController with ChangeNotifier {
     notifyListeners();
   }
 
-  List<Widget> myPages = [HomeScreen(), CAtegoryScreen(), SearchScreen()];
+  List<Widget> myPages = [
+    const HomeScreen(),
+    const CAtegoryScreen(),
+    const SearchScreen()
+  ];
   @override
   void notifyListeners() {
-    // TODO: implement notifyListeners
     super.notifyListeners();
   }
 }

@@ -14,14 +14,12 @@ class HomeScreenController with ChangeNotifier {
     final url = Uri.parse(
         "https://newsapi.org/v2/top-headlines?country=us&apiKey=8fa00ba1169d491bb7a76a8a2e9c7cfe");
     final response = await http.get(url);
-    print(response.statusCode);
+
     Map<String, dynamic> decodedData = {};
 
     if (response.statusCode == 200) {
       decodedData = jsonDecode(response.body);
-    } else {
-      print("Api failed");
-    }
+    } else {}
     newsModel = NewsModel.fromJson(decodedData);
     isLoading = false;
     notifyListeners();
@@ -36,7 +34,7 @@ class HomeScreenController with ChangeNotifier {
         throw 'Could not launch $url';
       }
     } catch (e) {
-      print('Error launching URL: $e');
+      rethrow;
     }
     notifyListeners();
   }
@@ -45,7 +43,7 @@ class HomeScreenController with ChangeNotifier {
     try {
       Share.share(textToShare);
     } catch (e) {
-      print('Error sharing: $e');
+      notifyListeners();
     }
     notifyListeners();
   }

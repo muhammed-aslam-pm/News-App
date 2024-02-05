@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_with_api/controller/home-screen_controller.dart';
+import 'package:news_app_with_api/controller/home_screen_controller.dart';
 import 'package:lottie/lottie.dart';
 import 'package:news_app_with_api/view/widgets/news_card.dart';
 import 'package:news_app_with_api/view/search_screen/search_screen.dart';
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeScreenController provider = Provider.of<HomeScreenController>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff6A3DE8),
+        backgroundColor: const Color(0xff6A3DE8),
         elevation: 0,
         title: const Text(
           "News Today 📰",
@@ -41,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SearchScreen(),
+                  builder: (context) => const SearchScreen(),
                 ),
               );
             },
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           )
         ],
       ),

@@ -56,11 +56,11 @@ class _SearchScreenState extends State<SearchScreen> {
                         searchText: textController.text.toLowerCase());
                     FocusManager.instance.primaryFocus?.unfocus();
                   },
-                  child: Text("Search"),
-                  style: ButtonStyle(
+                  style: const ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Color(0xff6A3DE8)),
                       foregroundColor: MaterialStatePropertyAll(Colors.white)),
+                  child: const Text("Search"),
                 )
               ],
             ),
